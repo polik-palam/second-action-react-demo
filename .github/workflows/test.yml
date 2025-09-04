@@ -1,9 +1,8 @@
-name: Test Project
+name: Deploy website
 on:
   push:
     branches:
       - main
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -21,14 +20,11 @@ jobs:
       - name: Test code
         run: npm run test
 
-      - name: Build code
-        run: npm run build
-
   build:
     needs: test
     runs-on: ubuntu-latest
-    steps:
 
+    steps:
       - name: Get code
         uses: actions/checkout@v5
 
@@ -44,4 +40,4 @@ jobs:
 
     steps:
       - name: Deploy
-        run: echo 'Deploying...'
+        run: echo "Deploying..."
