@@ -6,6 +6,8 @@ jobs:
     strategy:
       matrix:
         node-version: [14, 15, 16]
+        include:
+          - node-version: 18
     runs-on: ubuntu-latest
 
     steps:
